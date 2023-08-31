@@ -23,7 +23,7 @@ flowchart TD
 class jre,cml,ant,git internal-link;
 ```
 ## I. Eclipse
-### Download #Eclipse
+### Download Eclipse
 - [Eclipse Installer 2023-06 R | Eclipse Packages](https://www.eclipse.org/downloads/packages/installer)
 ### Install Eclipse
 - Choose **Eclipse IDE for Java Developers**
@@ -42,20 +42,20 @@ class jre,cml,ant,git internal-link;
   java --version
   ```
 	- If it runs successfully, which means you have the JRE globally available, you can skip this section.
-- Either install #JDK from other sources:
+- Either install JDK from other sources:
 	- [Java Downloads | Oracle](https://www.oracle.com/java/technologies/downloads/)
 	- [Microsoft Build of OpenJDK](https://learn.microsoft.com/en-us/java/openjdk/install)
 	- Using package manager
 		- E.g., `brew install java`
-- Or add an existing #JRE (e.g., the one that comes with Eclipse) to the system path
+- Or add an existing JRE (e.g., the one that comes with Eclipse) to the system path
   > [!note] Locate JRE directory in Eclipse
   > Navigate to **Preferences** (Windows: `Window > Preferences`; macOS: `Eclipse > Settings...`) `> Java > Installed JREs`
 
-  add `<JRE_home>/bin` to PATH ^354e84
+  add `<JRE_home>/bin` to PATH
 	- [How to Add to Windows PATH Environment Variable (helpdeskgeek.com)](https://helpdeskgeek.com/windows-10/add-windows-path-environment-variable/)
 	- [How to add a directory to system path on macos? - Search (bing.com)](https://www.bing.com/search?q=How+to+add+a+directory+to+system+path+on+macos%3F&qs=n&form=QBRE&sp=-1&lq=0&pq=how+to+add+a+directory+to+system+path+on+macos%3F&sc=1-47&sk=&cvid=4378818048944D8F80C258137169AB12&ghsh=0&ghacc=0&ghpl=)
 #### Using an existing JRE for Eclipse
-- [[Lab 00 - Project Setup#^354e84|Add and apply]] JRE
+- Add and apply JRE (see the section above)
 - Change _compiler compliance level_ (`Preferences > Java > Compiler`) accordingly
 ## II. Ant
 ### Import existing Java projects
@@ -66,15 +66,16 @@ class jre,cml,ant,git internal-link;
 > The [course project](https://tulane.instructure.com/courses/2271434/pages/java-project) has been properly configured.
 
 > [!info]
-> See [Configure Ant to build Jar file](https://tulane.instructure.com/courses/2271434/pages/build-dot-xml) for reference. #Jar
+> See [Configure Ant to build Jar file](https://tulane.instructure.com/courses/2271434/pages/build-dot-xml) for reference.
 ## III. EGit
 > [!info]
-> See [EGit Setup](https://tulane.instructure.com/courses/2271434/pages/egit-setup) for reference. #Git
+> See [EGit Setup](https://tulane.instructure.com/courses/2271434/pages/egit-setup) for reference.
 ### Prerequisite
 - A [GitHub](https://github.com/) account
 - A [repository](https://github.com/new) in your account
-### [Generate a personal access token](https://github.com/settings/personal-access-tokens/new)
-- ![[github_generate_PAT.png]]
+### Generate a personal access token
+- Go to the [setting page](https://github.com/settings/personal-access-tokens/new).
+  ![[github_generate_PAT.png]]
 - Repository access
 	- choose **Only select repositories**
 - Permissions > Repository permissions (Access: Read and write)
@@ -93,13 +94,13 @@ class jre,cml,ant,git internal-link;
 	- Password: the access token generated in [[Lab 00 - Project Setup#[Generate a personal access token](https //github.com/settings/personal-access-tokens/new)|the section above]] 
 ## IV. Camelot
 > [!info]
-> See [Configuring Camelot](https://tulane.instructure.com/courses/2271434/pages/configuring-camelot) for reference. #Camelot
+> See [Configuring Camelot](https://tulane.instructure.com/courses/2271434/pages/configuring-camelot) for reference.
 ### Windows
 - Download [Camelot](http://cs.uky.edu/~sgware/projects/camelot/v1-2/) and extract it to your preferred location
 ### MacOS
 - Download the app from [here](https://drive.google.com/drive/folders/1iiD872kNDVB_G3Vk3O55cdb79iMAvGzI)(whole folder)
   ![[camelot_downloading_macos.png|500]]
-- Locate the downloaded zip file (move it to your preferred location if you wish) and unzip it (e.g., at `~/Downloads/Camelot.app`)
+- Locate the downloaded zip file (move it to your preferred location if you wish) and double-click it to extract it(e.g., at `~/Downloads/Camelot.app`)
 - Open terminal at the app folder
   ![[macos_open_terminal.png|240]]
 	- Change directory to the parent folder

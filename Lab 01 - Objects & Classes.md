@@ -1,6 +1,6 @@
 ## Links
 - [Assignment](https://tulane.instructure.com/courses/2271434/assignments/14343170)
-## Variable, Input and Output #IO
+## Variable, Input and Output
 ### Variable
 Declare a variable (**strong typing**)
 > [!abstract] Syntax
@@ -55,7 +55,7 @@ Standard output stream: `System.out`
   The value of d is 0.333
   ```
 ## Control Statements and Arrays
-### _if_ statement #If
+### _if_ statement
 > [!abstract] Syntax
 > ```java
 > if (expression1) { /* statements */ }
@@ -74,7 +74,7 @@ Output:
 ```
 2nd branch
 ```
-### _while_ loop #While #later
+### _while_ loop #later
 > [!abstract] Syntax
 > ```java
 > while (conditionExpression) { /* Loop body */ }
@@ -91,7 +91,7 @@ Output:
 ```
 5 4 3 2 1 
 ```
-### _for_ loop #For #later
+### _for_ loop #later
 > [!abstract] Syntax
 > ```java
 > for (initialExpression; conditionExpression; updateExpression) {
@@ -106,7 +106,7 @@ Output:
 ```
 5 4 3 2 1 
 ```
-### Arrays #Array #later
+### Arrays #later
 > [!abstract] Syntax
 > ```java
 > DataType[] arrayName = new DataType[numElements];
@@ -129,7 +129,7 @@ Output:
 ```
 55
 ```
-## #Method
+## Method
 - A named list of statements
 - Definition
 > [!abstract] Syntax
@@ -146,8 +146,8 @@ Output:
 > ```java
 > ReturnDataType ret = methodName(argument1, argument2);
 > ```
-## #Class
-- #Object
+## Class
+- **Object**
     - a grouping of __variable__s and __method__s
     - an instance of some **class**
 - **Class**
@@ -164,7 +164,7 @@ class A {
     void memberMethod() { /* Do something. */ }
 }
 ```
-- #Reference
+- **Reference**
     - a variable type that refers to an object
     - **_new_** operator allocates memory for an object
   ```java
@@ -177,13 +177,13 @@ class A {
   obj.memberMethod();
   scnr.nextInt();
   ```
-- **Access modifier**s (for member fields or methods) #Access-Modifier
+- **Access modifier**s (for member fields or methods)
     - **private**: only member methods can access
     - **public**: both member methods and class user (object) can access
     - **static**: globally accessible, associated with a class not an object
 ### Special member methods
 
-- #Mutator (setter) & #Accessor (getter)
+- **Mutator** (setter) & **Accessor** (getter)
     - change or get the value of a private field
   ```java
   class A {
@@ -192,7 +192,7 @@ class A {
       public void setVar(String v) { var = v; }
   }
   ```
-- #Constructor
+- **Constructor**
     - initializes the member fields of an object
     - has exact the same name as the class
   ```java
