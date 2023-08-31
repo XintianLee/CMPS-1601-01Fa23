@@ -23,7 +23,7 @@ flowchart TD
 class jre,cml,ant,git internal-link;
 ```
 ## I. Eclipse
-### Download Eclipse
+### Download #Eclipse
 - [Eclipse Installer 2023-06 R | Eclipse Packages](https://www.eclipse.org/downloads/packages/installer)
 ### Install Eclipse
 - Choose **Eclipse IDE for Java Developers**
@@ -42,12 +42,12 @@ class jre,cml,ant,git internal-link;
   java --version
   ```
 	- If it runs successfully, which means you have the JRE globally available, you can skip this section.
-- Either install JDK from other sources:
+- Either install #JDK from other sources:
 	- [Java Downloads | Oracle](https://www.oracle.com/java/technologies/downloads/)
 	- [Microsoft Build of OpenJDK](https://learn.microsoft.com/en-us/java/openjdk/install)
 	- Using package manager
 		- E.g., `brew install java`
-- Or add an existing JRE (e.g., the one that comes with Eclipse) to the system path
+- Or add an existing #JRE (e.g., the one that comes with Eclipse) to the system path
   > [!note] Locate JRE directory in Eclipse
   > Navigate to **Preferences** (Windows: `Window > Preferences`; macOS: `Eclipse > Settings...`) `> Java > Installed JREs`
 
@@ -66,10 +66,10 @@ class jre,cml,ant,git internal-link;
 > The [course project](https://tulane.instructure.com/courses/2271434/pages/java-project) has been properly configured.
 
 > [!info]
-> See [Configure Ant to build Jar file](https://tulane.instructure.com/courses/2271434/pages/build-dot-xml) for reference.
+> See [Configure Ant to build Jar file](https://tulane.instructure.com/courses/2271434/pages/build-dot-xml) for reference. #Jar
 ## III. EGit
 > [!info]
-> See [EGit Setup](https://tulane.instructure.com/courses/2271434/pages/egit-setup) for reference.
+> See [EGit Setup](https://tulane.instructure.com/courses/2271434/pages/egit-setup) for reference. #Git
 ### Prerequisite
 - A [GitHub](https://github.com/) account
 - A [repository](https://github.com/new) in your account
@@ -93,7 +93,7 @@ class jre,cml,ant,git internal-link;
 	- Password: the access token generated in [[Lab 00 - Project Setup#[Generate a personal access token](https //github.com/settings/personal-access-tokens/new)|the section above]] 
 ## IV. Camelot
 > [!info]
-> See [Configuring Camelot](https://tulane.instructure.com/courses/2271434/pages/configuring-camelot) for reference.
+> See [Configuring Camelot](https://tulane.instructure.com/courses/2271434/pages/configuring-camelot) for reference. #Camelot
 ### Windows
 - Download [Camelot](http://cs.uky.edu/~sgware/projects/camelot/v1-2/) and extract it to your preferred location
 ### MacOS
