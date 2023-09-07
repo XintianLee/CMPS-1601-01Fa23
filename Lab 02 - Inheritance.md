@@ -1,5 +1,10 @@
-## Links
-- [Assignment](https://tulane.instructure.com/courses/2271434/assignments/14343171)
+- [[#Derived class (_subclass_)]]
+- [[#Protected member]]
+- [[#Overriding member methods]]
+- [[#The Object class]]
+- [[#Unified Modeling Language (UML)]]
+
+- [[#Lab assignment hints]]
 
 ## Derived class (_subclass_)
 - derived from another class, called a **base class** (_superclass_)
@@ -148,9 +153,45 @@ System.out.println(str1 == str3);
     true
     true
 
+## Unified Modeling Language (UML)
+<table  style="border:solid">
+  <tr>
+    <th style="border:solid;text-align:center"><i style="background-color:MediumSeaGreen">Shape</i></th>
+  </tr>
+  <tr>
+    <td style="text-align:left"><span style="background-color:LightGray">-</span> <span style="background-color:LemonChiffon">type</span>: <span style="background-color:LightSkyBlue">String</span></td>
+  </tr>
+  <tr>
+      <td style="text-align:left"><span style="background-color:LightGray">+</span> <i><span style="background-color:LightSalmon">computeArea()</span>: <span style="background-color:MediumPurple">double</span></i></td>
+  </tr>
+</table>
+
+<table  style="border:solid">
+  <tr>
+    <th style="border:solid;text-align:center"><span style="background-color:MediumSeaGreen">Circle</span></th>
+  </tr>
+  <tr>
+    <td style="text-align:left"><span style="background-color:LightGray">-</span> <span style="background-color:LemonChiffon">radius</span>: <span style="background-color:LightSkyBlue">double</span></td>
+  </tr>
+  <tr>
+    <td style="text-align:left"><span style="background-color:LightGray">-</span> <span style="background-color:LemonChiffon">center</span>: <span style="background-color:LightSkyBlue">Point</span></td>
+  </tr>
+  <tr>
+    <td style="text-align:left"><span style="background-color:LightGray">+</span> <span style="background-color:LightSalmon">computeArea()</span>: <span style="background-color:MediumPurple">double</span></td>
+  </tr>
+</table>
+
+- <span style="background-color:MediumSeaGreen">&nbsp; &nbsp;&nbsp;</span> Class name (*italic* if abstract)
+- <span style="background-color:LemonChiffon">&nbsp; &nbsp;&nbsp;</span> Member variable name
+- <span style="background-color:LightSkyBlue">&nbsp; &nbsp;&nbsp;</span> Member variable type
+- <span style="background-color:LightSalmon">&nbsp; &nbsp;&nbsp;</span> Method name (*italic* if abstract)
+- <span style="background-color:MediumPurple">&nbsp; &nbsp;&nbsp;</span> Method return type
+- <span style="background-color:LightGray">&nbsp; &nbsp;&nbsp;</span> Access: `-` private, `+` public
+- A <span style="font-size:25px">&roarr;</span> B: A inherits from B.
 
 ## Lab assignment hints
-### 7.4 LAB: Bank accounts
+[Lab 02: Inheritance](https://tulane.instructure.com/courses/2271434/assignments/14343171)
+### 8.4 LAB: Bank accounts
 `BankAccount`
 - `toString`: use [String.format](https://docs.oracle.com/en/java/javase/19/docs/api/java.base/java/lang/String.html#format(java.lang.String,java.lang.Object...)) to make formatted strings
   - The [syntax](https://docs.oracle.com/en/java/javase/19/docs/api/java.base/java/util/Formatter.html#syntax) of the format specifiers for general, character, and numeric types: <pre>%[<span style="color:red">argument_index</span>&dollar;]\[<span style="color:orange">flags</span>][<span style="color:green">width</span>]\[.<span style="color:blue">precision</span>]<span style="color:purple">conversion</span></pre>
