@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html><head>
+			
+		<title>Lab 02 - Inheritance</title>
+		<base href="./">
+		<meta id="root-path" root-path="./">
+
+		<link rel="icon" sizes="96x96" href="https://publish-01.obsidian.md/access/f786db9fac45774fa4f0d8112e232d67/favicon-96x96.png">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, minimum-scale=1.0, maximum-scale=5.0">
+		<meta charset="UTF-8">
+		<script src="https://code.iconify.design/iconify-icon/1.0.3/iconify-icon.min.js"></script>
+
+			<link rel="stylesheet" href="lib/styles/obsidian-styles.css">
+			<link rel="stylesheet" href="lib/styles/theme.css">
+			<link rel="stylesheet" href="lib/styles/plugin-styles.css">
+			<link rel="stylesheet" href="lib/styles/snippets.css">
+			<style>  </style>
+
+			
+			<!-- Graph View Data -->
+			<script>
+			let nodes=
+{"nodeCount":5,"linkCount":6,"radii":[7,7,6.4375,5.109375,5.109375],"labels":["README","Lab 00 - Project Setup","PM 1 - First Experience Manager","Lab 02 - Inheritance","Lab 01 - Objects & Classes"],"paths":["readme.html","lab-00-project-setup.html","pm-1-first-experience-manager.html","lab-02-inheritance.html","lab-01-objects-&-classes.html"],"linkSources":[1,2,0,0,0,0],"linkTargets":[1,1,1,4,2,3]};
+			let attractionForce = 1;
+			let linkLength = 10;
+			let repulsionForce = 150;
+			let centralForce = 3;
+			let edgePruning = 100;
+			</script>
+			
+<script type="module" src="lib/scripts/graph_view.js"></script>
+
+<script src="lib/scripts/graph_wasm.js"></script>
+
+<script src="lib/scripts/tinycolor.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pixi.js/7.2.4/pixi.min.js" integrity="sha512-Ch/O6kL8BqUwAfCF7Ie5SX1Hin+BJgYH4pNjRqXdTEqMsis1TUYg+j6nnI9uduPjGaj7DN4UKCZgpvoExt6dkw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+<script src="lib/scripts/webpage.js"></script>
+
+			</head><body class="theme-dark mod-macos is-frameless is-hidden-frameless obsidian-app native-scrollbars show-inline-title show-view-header is-fullscreen" style="--zoom-factor:1; --font-text-size:16px; --line-width:1000px; --line-width-adaptive:1000px; --file-line-width:1000px; --content-width:500em; --sidebar-width:280px; --collapse-arrow-size:0.4em; --tree-horizontal-spacing:1em; --tree-vertical-spacing:0.5em; --sidebar-margin:12px;"><div class="webpage-container"><div class="sidebar-left sidebar"><div class="sidebar-content"><div><label class="theme-toggle-container" for="theme_toggle"><input class="theme-toggle-input" type="checkbox" id="theme_toggle"><div class="toggle-background"></div></label></div><div class="tree-container file-tree mod-nav-indicator" data-depth="0"><div class="tree-header"><span class="sidebar-section-header">CMPS-1601-01Fa23</span><button class="clickable-icon collapse-tree-button is-collapsed"><iconify-icon icon="ph:arrows-in-line-horizontal-bold" width="18px" height="18px" rotate="90deg" color="currentColor"></iconify-icon></button></div><div class="tree-scroll-area"><div class="tree-item mod-tree-file" data-depth="1"><div class="tree-item-contents"><a class="tree-item-link" href="lab-00-project-setup.html"><span class="tree-item-title">Lab 00 - Project Setup</span></a></div><div class="tree-item-children"></div></div><div class="tree-item mod-tree-file" data-depth="1"><div class="tree-item-contents"><a class="tree-item-link" href="lab-01-objects-&amp;-classes.html"><span class="tree-item-title">Lab 01 - Objects &amp; Classes</span></a></div><div class="tree-item-children"></div></div><div class="tree-item mod-tree-file" data-depth="1"><div class="tree-item-contents"><a class="tree-item-link" href="lab-02-inheritance.html"><span class="tree-item-title">Lab 02 - Inheritance</span></a></div><div class="tree-item-children"></div></div><div class="tree-item mod-tree-file" data-depth="1"><div class="tree-item-contents"><a class="tree-item-link" href="pm-1-first-experience-manager.html"><span class="tree-item-title">PM 1 - First Experience Manager</span></a></div><div class="tree-item-children"></div></div><div class="tree-item mod-tree-file" data-depth="1"><div class="tree-item-contents"><a class="tree-item-link" href="readme.html"><span class="tree-item-title">README</span></a></div><div class="tree-item-children"></div></div></div></div></div></div><div class="document-container"><div class="markdown-preview-view markdown-rendered node-insert-event is-readable-line-width allow-fold-headings show-indentation-guide allow-fold-lists" tabindex="-1" style="tab-size: 4;"><style id="MJX-CHTML-styles"></style><div class="markdown-preview-sizer markdown-preview-section" style="padding-bottom: ; padding-top: var(--file-margins); padding-right: var(--file-margins); padding-left: var(--file-margins); width: 100%; position: absolute;"><div class="markdown-preview-pusher" style="width: 1px; height: 0.1px; margin-bottom: 0px;"></div><div class="mod-header"><div class="inline-title" data-heading="Lab 02 - Inheritance" id="Lab_02_-_Inheritance" style="display: block;">Lab 02 - Inheritance</div></div><div><h2 data-heading="Links" id="Links" style="display: flex;"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>Links</h2></div><div><ul class="has-list-bullet">
+<li data-line="0"><div class="list-bullet"></div><a data-tooltip-position="top" aria-label="https://tulane.instructure.com/courses/2271434/assignments/14343171" rel="noopener" class="external-link" href="https://tulane.instructure.com/courses/2271434/assignments/14343171" target="_blank">Assignment</a></li>
+</ul></div><div><h2 data-heading="Derived class (_subclass_)" id="Derived_class_(subclass)" style="display: flex;"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>Derived class (<em>subclass</em>)</h2></div><div><ul class="has-list-bullet">
+<li data-line="0"><div class="list-bullet"></div>derived from another class, called a <strong>base class</strong> (<em>superclass</em>)</li>
+<li data-line="1"><div class="list-bullet"></div><span style="color:brown">inherit</span>s the properties (member variables and methods) of the base class</li>
+</ul></div><div><pre class="language-java" tabindex="0"><code class="language-java is-loaded"><span class="token keyword">class</span> <span class="token class-name">DerivedClass</span> <span class="token keyword">extends</span> <span class="token class-name">BaseClass</span> <span class="token punctuation">{</span> <span class="token comment">/*...*/</span> <span class="token punctuation">}</span>
+</code><button class="copy-code-button">Copy</button></pre></div><div><h2 data-heading="Protected member" id="Protected_member" style="display: flex;"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>Protected member</h2></div><div style="overflow-x: auto;"><table>
+<thead>
+<tr>
+<th align="left">Access Specifier</th>
+<th align="left">Accessiblity</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">private</td>
+<td align="left">self</td>
+</tr>
+<tr>
+<td align="left">no specifier</td>
+<td align="left">self + classes in the same package</td>
+</tr>
+<tr>
+<td align="left"><strong>protected</strong></td>
+<td align="left">self + classes in the same package + <strong>derived classes</strong></td>
+</tr>
+<tr>
+<td align="left">public</td>
+<td align="left">anyone</td>
+</tr>
+</tbody>
+</table></div><div><pre class="language-java" tabindex="0"><code class="language-java is-loaded"><span class="token keyword">class</span> <span class="token class-name">BaseClass</span> <span class="token punctuation">{</span>
+    <span class="token keyword">private</span> <span class="token class-name">String</span> var1 <span class="token operator">=</span> <span class="token string">"var1: base class private member field"</span><span class="token punctuation">;</span>
+    <span class="token keyword">protected</span> <span class="token class-name">String</span> var2 <span class="token operator">=</span> <span class="token string">"var2: base class protected member field"</span><span class="token punctuation">;</span>
+    
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">printMemberFields</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"From superclass object:"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>var1<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>var2<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">class</span> <span class="token class-name">DerivedClass</span> <span class="token keyword">extends</span> <span class="token class-name">BaseClass</span> <span class="token punctuation">{</span>
+    <span class="token keyword">private</span> <span class="token class-name">String</span> var3 <span class="token operator">=</span> <span class="token string">"var3: derived class private member field"</span><span class="token punctuation">;</span>
+    
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">printMemberFields</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"\nFrom subclass object:"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment">//System.out.println(var1);</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>var2<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>var3<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code><button class="copy-code-button">Copy</button></pre></div><div><pre class="language-java" tabindex="0"><code class="language-java is-loaded"><span class="token keyword">new</span> <span class="token class-name">BaseClass</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">printMemberFields</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword">new</span> <span class="token class-name">DerivedClass</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">printMemberFields</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code><button class="copy-code-button">Copy</button></pre></div><div><pre><code>From superclass object:
+var1: base class private member field
+var2: base class protected member field
+
+From subclass object:
+var2: base class protected member field
+var3: derived class private member field
+</code><button class="copy-code-button">Copy</button></pre></div><div><h2 data-heading="Overriding member methods" id="Overriding_member_methods" style="display: flex;"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>Overriding member methods</h2></div><div><ul class="has-list-bullet">
+<li data-line="0"><div class="list-bullet"></div><div class="list-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>
+<p><strong><em>@Override</em></strong> annotation</p>
+<ul class="has-list-bullet">
+<li data-line="1"><div class="list-bullet"></div>the compiler verifies that an identical base class method exists</li>
+</ul>
+</li>
+<li data-line="3"><div class="list-bullet"></div><div class="list-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>
+<p>implicit variable <strong><em>super</em></strong> (vs <strong><em>this</em></strong>)</p>
+<ul class="has-list-bullet">
+<li data-line="4"><div class="list-bullet"></div>a reference variable used to access superclass's members (including constructors)</li>
+</ul>
+</li>
+</ul></div><div><pre class="language-java" tabindex="0"><code class="language-java is-loaded"><span class="token keyword">class</span> <span class="token class-name">BaseClass</span> <span class="token punctuation">{</span>
+    <span class="token keyword">private</span> <span class="token class-name">String</span> memberField<span class="token punctuation">;</span> <span class="token comment">// private member field</span>
+    <span class="token keyword">public</span> <span class="token class-name">BaseClass</span><span class="token punctuation">(</span><span class="token class-name">String</span> memberField<span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token comment">// constructor</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>memberField <span class="token operator">=</span> memberField<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">memberMethod</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"BaseClass private member field: "</span> <span class="token operator">+</span> memberField<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">class</span> <span class="token class-name">DerivedClass</span> <span class="token keyword">extends</span> <span class="token class-name">BaseClass</span> <span class="token punctuation">{</span>
+    <span class="token keyword">public</span> <span class="token class-name">DerivedClass</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">super</span><span class="token punctuation">(</span><span class="token string">"initialized from derived class"</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// call BaseClass constructor</span>
+    <span class="token punctuation">}</span>
+    <span class="token annotation punctuation">@Override</span>
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">memberMethod</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"DerivedClass memberMethod called"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">super</span><span class="token punctuation">.</span><span class="token function">memberMethod</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code><button class="copy-code-button">Copy</button></pre></div><div><pre class="language-java" tabindex="0"><code class="language-java is-loaded"><span class="token keyword">new</span> <span class="token class-name">DerivedClass</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">memberMethod</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+</code><button class="copy-code-button">Copy</button></pre></div><div><pre><code>DerivedClass memberMethod called
+BaseClass private member field: initialized from derived class
+</code><button class="copy-code-button">Copy</button></pre></div><div><h2 data-heading="The Object class" id="The_Object_class" style="display: flex;"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>The Object class</h2></div><div><ul class="has-list-bullet">
+<li data-line="0"><div class="list-bullet"></div><div class="list-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>built-in <strong><em>Object</em> class</strong>
+<ul class="has-list-bullet">
+<li data-line="1"><div class="list-bullet"></div>base class for all other classes</li>
+</ul>
+</li>
+<li data-line="2"><div class="list-bullet"></div><div class="list-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div><code>toString</code> method
+<ul class="has-list-bullet">
+<li data-line="3"><div class="list-bullet"></div>returns a <code>String</code> representation of the object</li>
+</ul>
+</li>
+</ul></div><div><pre class="language-java" tabindex="0"><code class="language-java is-loaded"><span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">DerivedClass</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code><button class="copy-code-button">Copy</button></pre></div><div><pre><code>DerivedClass@2d07093d
+</code><button class="copy-code-button">Copy</button></pre></div><div><pre class="language-java" tabindex="0"><code class="language-java is-loaded"><span class="token keyword">class</span> <span class="token class-name">DerivedClass</span> <span class="token punctuation">{</span>
+    <span class="token annotation punctuation">@Override</span>
+    <span class="token keyword">public</span> <span class="token class-name">String</span> <span class="token function">toString</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> <span class="token string">"a DerivedClass instance"</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code><button class="copy-code-button">Copy</button></pre></div><div><pre class="language-java" tabindex="0"><code class="language-java is-loaded"><span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">DerivedClass</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code><button class="copy-code-button">Copy</button></pre></div><div><pre><code>a DerivedClass instance
+</code><button class="copy-code-button">Copy</button></pre></div><div><ul class="has-list-bullet">
+<li data-line="0"><div class="list-bullet"></div><code>equals</code> method</li>
+</ul></div><div><pre class="language-java" tabindex="0"><code class="language-java is-loaded"><span class="token class-name">String</span> str1 <span class="token operator">=</span> <span class="token string">"string"</span><span class="token punctuation">;</span>
+<span class="token class-name">String</span> str2 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">String</span><span class="token punctuation">(</span><span class="token string">"string"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token class-name">String</span> str3 <span class="token operator">=</span> <span class="token string">"string"</span><span class="token punctuation">;</span>
+
+<span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>str1 <span class="token operator">==</span> str2<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// == operator compares the references not the values</span>
+<span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>str1<span class="token punctuation">.</span><span class="token function">equals</span><span class="token punctuation">(</span>str2<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>str1 <span class="token operator">==</span> str3<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code><button class="copy-code-button">Copy</button></pre></div><div><pre><code>false
+true
+true
+</code><button class="copy-code-button">Copy</button></pre></div><div><h2 data-heading="Lab assignment hints" id="Lab_assignment_hints" style="display: flex;"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>Lab assignment hints</h2></div><div><h3 data-heading="7.4 LAB: Bank accounts" id="7.4_LAB:_Bank_accounts" style="display: flex;"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>7.4 LAB: Bank accounts</h3></div><div><p><code>BankAccount</code></p></div><div><ul class="has-list-bullet">
+<li data-line="0"><div class="list-bullet"></div><div class="list-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div><code>toString</code>: use <a data-tooltip-position="top" aria-label="https://docs.oracle.com/en/java/javase/19/docs/api/java.base/java/lang/String.html#format(java.lang.String,java.lang.Object...)" rel="noopener" class="external-link" href="https://docs.oracle.com/en/java/javase/19/docs/api/java.base/java/lang/String.html#format(java.lang.String,java.lang.Object...)" target="_blank">String.format</a> to make formatted strings
+<ul class="has-list-bullet">
+<li data-line="1"><div class="list-bullet"></div>The <a data-tooltip-position="top" aria-label="https://docs.oracle.com/en/java/javase/19/docs/api/java.base/java/util/Formatter.html#syntax" rel="noopener" class="external-link" href="https://docs.oracle.com/en/java/javase/19/docs/api/java.base/java/util/Formatter.html#syntax" target="_blank">syntax</a> of the format specifiers for general, character, and numeric types: <pre>%[<span style="color:red">argument_index</span>$][<span style="color:orange">flags</span>][<span style="color:green">width</span>][.<span style="color:blue">precision</span>]<span style="color:purple">conversion</span></pre></li>
+<li data-line="2"><div class="list-bullet"></div>E.g., <pre>String.format("π = %<span style="color:red">1</span>$<span style="color:orange">+</span><span style="color:green">10</span>.<span style="color:blue">4</span><span style="color:purple">f</span>", Math.PI)</pre></li>
+</ul>
+</li>
+</ul></div><div><p><code>CheckingAccount</code></p></div><div><ul class="has-list-bullet">
+<li data-line="0"><div class="list-bullet"></div>override <code>deposit</code> and <code>withdraw</code> to count transactions</li>
+</ul></div><div><pre class="language-java" tabindex="0"><code class="language-java is-loaded"><span class="token class-name">String</span><span class="token punctuation">.</span><span class="token function">format</span><span class="token punctuation">(</span><span class="token string">"π = %1$+10.4f"</span><span class="token punctuation">,</span> <span class="token class-name">Math</span><span class="token punctuation">.</span>PI<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code><button class="copy-code-button">Copy</button></pre></div><div><pre><code>π =    +3.1416
+</code><button class="copy-code-button">Copy</button></pre></div><div><pre class="language-java" tabindex="0"><code class="language-java is-loaded"><span class="token class-name">String</span> param1 <span class="token operator">=</span> <span class="token string">"a string"</span><span class="token punctuation">;</span>
+<span class="token keyword">int</span> param2 <span class="token operator">=</span> <span class="token number">5</span><span class="token punctuation">;</span>
+<span class="token keyword">double</span> param3 <span class="token operator">=</span> <span class="token number">4.25915</span><span class="token punctuation">;</span>
+
+<span class="token comment">// %s : string</span>
+<span class="token comment">// %d : decimal integer</span>
+<span class="token comment">// %f : floating point decimal</span>
+<span class="token class-name">String</span> formatted <span class="token operator">=</span> <span class="token class-name">String</span><span class="token punctuation">.</span><span class="token function">format</span><span class="token punctuation">(</span><span class="token string">"%s, %d, %.4f"</span><span class="token punctuation">,</span> param1<span class="token punctuation">,</span> param2<span class="token punctuation">,</span> param3<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>formatted<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code><button class="copy-code-button">Copy</button></pre></div><div><pre><code>a string, 5, 4.2592
+</code><button class="copy-code-button">Copy</button></pre></div><div class="mod-footer"></div></div></div></div><div class="sidebar-right sidebar"><div class="sidebar-content"><span class="sidebar-section-header">Interactive Graph</span><div class="graph-view-placeholder">
+		<div class="graph-view-container">
+			<div class="graph-icon graph-expand" role="button" aria-label="Expand" data-tooltip-position="top"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-arrow-up-right"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg></div>
+			<canvas id="graph-canvas" width="512px" height="512px"></canvas>
+		</div>
+		</div><div class="tree-container outline-tree" data-depth="0"><div class="tree-header"><span class="sidebar-section-header">Table Of Contents</span><button class="clickable-icon collapse-tree-button is-collapsed"><iconify-icon icon="ph:arrows-in-line-horizontal-bold" width="18px" height="18px" rotate="90deg" color="currentColor"></iconify-icon></button></div><div class="tree-scroll-area"><div class="tree-item mod-tree-heading" data-depth="1"><div class="tree-item-contents"><a class="tree-item-link" href="#Lab_02_-_Inheritance"><span class="tree-item-title">Lab 02 - Inheritance</span></a></div><div class="tree-item-children"><div class="tree-item mod-tree-heading" data-depth="2"><div class="tree-item-contents"><a class="tree-item-link" href="#Links"><span class="tree-item-title">Links</span></a></div><div class="tree-item-children"></div></div><div class="tree-item mod-tree-heading" data-depth="2"><div class="tree-item-contents"><a class="tree-item-link" href="#Derived_class_(_subclass_)"><span class="tree-item-title">Derived class (_subclass_)</span></a></div><div class="tree-item-children"></div></div><div class="tree-item mod-tree-heading" data-depth="2"><div class="tree-item-contents"><a class="tree-item-link" href="#Protected_member"><span class="tree-item-title">Protected member</span></a></div><div class="tree-item-children"></div></div><div class="tree-item mod-tree-heading" data-depth="2"><div class="tree-item-contents"><a class="tree-item-link" href="#Overriding_member_methods"><span class="tree-item-title">Overriding member methods</span></a></div><div class="tree-item-children"></div></div><div class="tree-item mod-tree-heading" data-depth="2"><div class="tree-item-contents"><a class="tree-item-link" href="#The_Object_class"><span class="tree-item-title">The Object class</span></a></div><div class="tree-item-children"></div></div><div class="tree-item mod-tree-heading mod-collapsible is-collapsed" data-depth="2"><div class="tree-item-contents"><div class="tree-item-icon collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div><a class="tree-item-link" href="#Lab_assignment_hints"><span class="tree-item-title">Lab assignment hints</span></a></div><div class="tree-item-children"><div class="tree-item mod-tree-heading" data-depth="3"><div class="tree-item-contents"><a class="tree-item-link" href="#7.4_LAB:_Bank_accounts"><span class="tree-item-title">7.4 LAB: Bank accounts</span></a></div><div class="tree-item-children"></div></div></div></div></div></div></div></div></div></div></div></body></html>
