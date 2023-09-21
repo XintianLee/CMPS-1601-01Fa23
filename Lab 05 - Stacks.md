@@ -168,16 +168,33 @@ while (!stack.empty()) // while the stack is not empty
 ## Lab assignment hints
 [Lab 05: Stacks (instructure.com)](https://tulane.instructure.com/courses/2271434/assignments/14343174)
 
-### 19.1 LAB: Mismatched Brackets Checker
+### 22.1 LAB: Mismatched Brackets Checker
 `readInFile`
-- See [File input](#File-input)
+- See [[#File input]]
 
 `containsMismatchedBrackets`
 - See this [draft flowchart](https://wavetulane-my.sharepoint.com/:u:/g/personal/xli71_tulane_edu/EbSxmJiA9FhHon7neqeYunQBiuKBLiSlmW0FLqaa731MuA?e=2Y6ipj) for reference
 - Use single quotes around a character:
   - E.g., `'('` is treated as a `Character` while `"("` is a `String`.
 
-
-```Java
-
+```mermaid
+flowchart TD
+  cmb(["containsMismatchedBrackets(lines)"]) --> stk[Instantiate a Stack for Characters]
+  stk --> cline{More lines\n ahead?}
+  subgraph "Iterate over each line"
+    cline -->|Y| cchar{More\ncharacters?}
+    subgraph "Iterate over each character"
+      cchar -->|Y| obrk{An opening\n bracket?} -->|Y| sttm1[/.../]
+      obrk -->|N| cbrk{A closing\n bracket?} -->|N| cchar
+      cbrk -->|Y| estk1{stack\nempty?} -->|Y| prt1[/Print/]
+      estk1 -->|N| mtch{Matched?} -->|N| prt2[/Print/]
+      mtch -->|Y| sttm2[/.../]
+      sttm1 & sttm2 --> cchar
+    end
+  end
+  cline -->|N| estk2{stack\nempty?} --> |N| prt3[/Print/]
+  prt1 & prt2 & prt3 --> tret([return true])
+  estk2 -->|Y| prt4[/Print/] --> fret([return false])
 ```
+
+

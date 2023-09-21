@@ -197,7 +197,7 @@ throw new ExceptionType("Error message");
 
 ### 14.1 LAB: Shapes Hierarchy
 - All member variables should be declared **private**.
-  - Use **super** to call constructors which initialize them or update *static* ones if needed.
+  - Use **super** to call the parent class (`Shape`) constructor which initializes members or updates *static* ones if needed.
 
 ```java
 public abstract class Shape implements Comparable<Shape> {
@@ -215,7 +215,7 @@ public abstract class Shape implements Comparable<Shape> {
   - Even when the Baker runs out of money to buy more butter, they can still continually buy flour.
   - Not necessary to use a loop here.
 - `bakeBread`/`bakeCake`
-  - For easier override of the method `makeGoods`, write <del>`void bakeBread()`/`void bakeCake()`</del> <ins>`boolean bakeBread()`/`boolean bakeCake()`</ins> instead.
+  - For easier override of the method `makeGoods`, write ~~`void bakeBread()`/`void bakeCake()`~~ <ins>`boolean bakeBread()`/`boolean bakeCake()`</ins> instead.
     - If ingredients are insufficient, return `false`; otherwise bake a cake/bread and return `true`.
 
 [[Lab 03 - Generics#14.4 LAB Pairs (generic classes)]]
