@@ -7,3 +7,4 @@
 - [[Lab 02 - Inheritance]]
 - [[Lab 03 - Generics]]
 - [[Lab 04 - Abstract Classes & Interfaces]]
+- [[Lab 05 - Stacks]]
