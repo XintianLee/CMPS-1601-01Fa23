@@ -1,5 +1,6 @@
 - [[#Abstract Class]]
 - [[#Interface]]
+- [[#Exceptions and debugging]]
 - [[#Lab assignment hints]]
 
 ## Abstract Class
@@ -124,29 +125,71 @@ class ImplementingClass implements InterfaceA, InterfaceB {
 
 ## Exceptions and debugging
 
+### Debugging
+1. predict problem
+2. test to validate
+	- insert ==print== statements
 
-<!--
-## Unit testing
-### Purpose of using methods
-- Improving program **readability**: decomposing a long piece of code into methods
-- For **reuse**: avoiding writing redundant code
-- **Modular programing**: dividing the functionality of a program into independent modules that can be developed and tested separately
-- **Incremental development**: designing, implementing and testing a program incrementally (each time adding a little)
+### Exceptions
+> [!info]
+> See [Lesson: Exceptions (The Java™ Tutorials > Essential Java Classes) (oracle.com)](https://docs.oracle.com/javase/tutorial/essential/exceptions/index.html) for reference.
 
-### Unit testing
-Individually testing a small unit (method or class) of a program by writing a **testbench**, which is
-- A program aiming to thoroughly test the target program via
-  - a series of **test cases** (input-output pairs)
-- Features of a good testbench:
-  - Automatic checks: Compare actual outputs with expected outputs.
-    - **Assertion statement**
+#### Handling exceptions
 ```java
-assert testExpression : detailedMessage;
+try {
+    // statements
+} catch (ExceptionType name) {
+    // handle the catched exception
+} catch (ExceptionType1|ExceptionType2 name) {
+
+} finally {
+    // ALWAYS executes when the `try` block exits
+}
 ```
-  - Independent test cases
-  - **100 code coverage**: Every line of code of the tested program is executed.
-  - Including **border cases**: Unusual or extreme test cases.
--->
+> [!example]
+> ```java
+> // a list of 5 integers
+> List<Integer> nums = new ArrayList(List.of(16, 4, 9, 1, 25));
+> 
+> try { // try accessing the 6th element
+>     System.out.println(nums.get(5));
+> } catch (IndexOutOfBoundsException e) {
+>     System.err.println("Caught IndexOutOfBoundsException: "
+>                        + e.getMessage());
+> }
+> ```
+> <p style="color:red">Caught <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/IndexOutOfBoundsException.html">IndexOutOfBoundsException</a>: Index 5 out of bounds for length 5</p>
+
+#### Throwing exceptions
+```java
+throw new ExceptionType("Error message");
+```
+> [!example]
+> ```java
+> try { // throw an exception of a general type
+>     throw new Exception("An unexpected condition");
+> } catch (Exception e) {
+>     System.err.println("Caught Exception: " + e.getMessage());
+> }
+> ```
+> <p style="color:red">Caught <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Exception.html">Exception</a>: An unexpected condition</p>
+
+> [!info]
+> See [Exception (Java SE 21 & JDK 21) (oracle.com)](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Exception.html) for reference.
+
+**checked** vs **unchecked** exceptions
+- should be able to ==anticipate==: e.g., `FileNotFoundException`
+  - either handle it with *try-catch*
+  - allow a method further up the call stack to handle it
+    - specifying the exceptions thrown by a method
+      ```java
+      ReturnType MethodName(ParameterType param) throws ExceptionType1, ExceptionType2 {
+          // statements without handling ExceptionType1 and ExceptionType2
+      }
+      ```
+- usually cannot anticipate (hardware or logic errors): `RuntimeException` and its subclasses
+  > [!info]
+  > See [RuntimeException (Java SE 21 & JDK 21) (oracle.com)](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/RuntimeException.html) for reference.
 
 
 ## Lab assignment hints

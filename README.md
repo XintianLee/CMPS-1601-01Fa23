@@ -6,3 +6,4 @@
 - [PM 1 - First Experience Manager](https://xintianlee.github.io/CMPS-1601-01Fa23/pm-1-first-experience-manager.html)
 - [Lab 02 - Inheritance](https://xintianlee.github.io/CMPS-1601-01Fa23/lab-02-inheritance.html)
 - [Lab 03 - Generics](https://xintianlee.github.io/CMPS-1601-01Fa23/lab-03-generics.html)
+- [Lab 04 - Abstract Class & Interfaces](https://xintianlee.github.io/CMPS-1601-01Fa23/lab-04-abstract-classes-&-interfaces.html)
