@@ -7,4 +7,5 @@
 - [[Lab 02 - Inheritance]]
 - [[Lab 03 - Generics]]
 - [[Lab 04 - Abstract Classes & Interfaces]]
+- [[Midterm Study Guide]]
 - [[Lab 05 - Stacks]]
