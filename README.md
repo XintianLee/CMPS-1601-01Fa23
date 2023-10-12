@@ -9,3 +9,4 @@
 - [[Lab 04 - Abstract Classes & Interfaces]]
 - [[Midterm Study Guide]]
 - [[Lab 05 - Stacks]]
+- [[Lab 06 - Binary Search Trees]]
