@@ -9,3 +9,4 @@
 - [Lab 04 - Abstract Class & Interfaces](https://xintianlee.github.io/CMPS-1601-01Fa23/lab-04-abstract-classes-&-interfaces.html)
 - [Midterm Study Guide](https://xintianlee.github.io/CMPS-1601-01Fa23/midterm-study-guide.html)
 - [Lab 05 - Stacks](https://xintianlee.github.io/CMPS-1601-01Fa23/lab-05-stacks.html)
+- [Lab 06 - Binary Search Trees](https://xintianlee.github.io/CMPS-1601-01Fa23/lab-06-binary-search-trees.html)
