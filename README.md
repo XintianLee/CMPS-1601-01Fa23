@@ -11,3 +11,4 @@
 - [[Lab 05 - Stacks]]
 - [[Lab 06 - Binary Search Trees]]
 - [[Lab - Test-Driven Development]]
+- [[Lab 07 - C Functions and Arrays]]
