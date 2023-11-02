@@ -12,3 +12,4 @@
 - [[Lab 06 - Binary Search Trees]]
 - [[Lab - Test-Driven Development]]
 - [[Lab 07 - C Functions and Arrays]]
+- [[Lab 08 - Pointers and Memory]]

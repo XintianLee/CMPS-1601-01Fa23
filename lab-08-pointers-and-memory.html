@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html><head>
+			
+		<title>Lab 08 - Pointers and Memory</title>
+		<base href="./">
+		<meta id="root-path" root-path="./">
+
+		<link rel="icon" sizes="96x96" href="https://publish-01.obsidian.md/access/f786db9fac45774fa4f0d8112e232d67/favicon-96x96.png">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, minimum-scale=1.0, maximum-scale=5.0">
+		<meta charset="UTF-8">
+		<script src="https://code.iconify.design/iconify-icon/1.0.3/iconify-icon.min.js"></script>
+
+			<link rel="stylesheet" href="lib/styles/obsidian-styles.css">
+			<link rel="stylesheet" href="lib/styles/theme.css">
+			<link rel="stylesheet" href="lib/styles/plugin-styles.css">
+			<link rel="stylesheet" href="lib/styles/snippets.css">
+			<style>  </style>
+
+			
+			<!-- Graph View Data -->
+			<script>
+			let nodes=
+{"nodeCount":13,"linkCount":26,"radii":[7,6.081597222222221,6.081597222222221,5.638888888888889,5.638888888888889,5.638888888888889,5.638888888888889,5.109375,5.109375,5.109375,4.493055555555555,4.493055555555555,3.7899305555555554],"labels":["README","Lab 04 - Abstract Classes & Interfaces","Lab 03 - Generics","Midterm Study Guide","Lab 05 - Stacks","Lab 00 - Project Setup","Lab - Test-Driven Development","Lab 08 - Pointers and Memory","Lab 07 - C Functions and Arrays","Lab 02 - Inheritance","PM 1 - First Experience Manager","Lab 01 - Objects & Classes","Lab 06 - Binary Search Trees"],"paths":["readme.html","lab-04-abstract-classes-&-interfaces.html","lab-03-generics.html","midterm-study-guide.html","lab-05-stacks.html","lab-00-project-setup.html","lab-test-driven-development.html","lab-08-pointers-and-memory.html","lab-07-c-functions-and-arrays.html","lab-02-inheritance.html","pm-1-first-experience-manager.html","lab-01-objects-&-classes.html","lab-06-binary-search-trees.html"],"linkSources":[6,6,5,9,2,1,1,4,8,3,3,3,10,7,0,0,0,0,0,0,0,0,0,0,0,0],"linkTargets":[6,4,5,9,2,1,2,4,8,11,1,2,5,7,5,11,10,9,2,1,3,4,12,6,8,7]};
+			let attractionForce = 1;
+			let linkLength = 10;
+			let repulsionForce = 150;
+			let centralForce = 3;
+			let edgePruning = 100;
+			</script>
+			
+<script type="module" src="lib/scripts/graph_view.js"></script>
+
+<script src="lib/scripts/graph_wasm.js"></script>
+
+<script src="lib/scripts/tinycolor.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pixi.js/7.2.4/pixi.min.js" integrity="sha512-Ch/O6kL8BqUwAfCF7Ie5SX1Hin+BJgYH4pNjRqXdTEqMsis1TUYg+j6nnI9uduPjGaj7DN4UKCZgpvoExt6dkw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+<script src="lib/scripts/webpage.js"></script>
+
+			</head><body class="theme-dark mod-macos is-frameless is-hidden-frameless obsidian-app native-scrollbars show-inline-title show-view-header is-fullscreen" style="--zoom-factor:1; --font-text-size:16px; --line-width:1000px; --line-width-adaptive:1000px; --file-line-width:1000px; --content-width:500em; --sidebar-width:280px; --collapse-arrow-size:0.4em; --tree-horizontal-spacing:1em; --tree-vertical-spacing:0.5em; --sidebar-margin:12px;"><div class="webpage-container"><div class="sidebar-left sidebar"><div class="sidebar-content"><div><label class="theme-toggle-container" for="theme_toggle"><input class="theme-toggle-input" type="checkbox" id="theme_toggle"><div class="toggle-background"></div></label></div><div class="tree-container file-tree mod-nav-indicator" data-depth="0"><div class="tree-header"><span class="sidebar-section-header">CMPS-1601-01Fa23</span><button class="clickable-icon collapse-tree-button is-collapsed"><iconify-icon icon="ph:arrows-in-line-horizontal-bold" width="18px" height="18px" rotate="90deg" color="currentColor"></iconify-icon></button></div><div class="tree-scroll-area"><div class="tree-item mod-tree-file" data-depth="1"><div class="tree-item-contents"><a class="tree-item-link" href="lab-test-driven-development.html"><span class="tree-item-title">Lab - Test-Driven Development</span></a></div><div class="tree-item-children"></div></div><div class="tree-item mod-tree-file" data-depth="1"><div class="tree-item-contents"><a class="tree-item-link" href="lab-00-project-setup.html"><span class="tree-item-title">Lab 00 - Project Setup</span></a></div><div class="tree-item-children"></div></div><div class="tree-item mod-tree-file" data-depth="1"><div class="tree-item-contents"><a class="tree-item-link" href="lab-01-objects-&amp;-classes.html"><span class="tree-item-title">Lab 01 - Objects &amp; Classes</span></a></div><div class="tree-item-children"></div></div><div class="tree-item mod-tree-file" data-depth="1"><div class="tree-item-contents"><a class="tree-item-link" href="lab-02-inheritance.html"><span class="tree-item-title">Lab 02 - Inheritance</span></a></div><div class="tree-item-children"></div></div><div class="tree-item mod-tree-file" data-depth="1"><div class="tree-item-contents"><a class="tree-item-link" href="lab-03-generics.html"><span class="tree-item-title">Lab 03 - Generics</span></a></div><div class="tree-item-children"></div></div><div class="tree-item mod-tree-file" data-depth="1"><div class="tree-item-contents"><a class="tree-item-link" href="lab-04-abstract-classes-&amp;-interfaces.html"><span class="tree-item-title">Lab 04 - Abstract Classes &amp; Interfaces</span></a></div><div class="tree-item-children"></div></div><div class="tree-item mod-tree-file" data-depth="1"><div class="tree-item-contents"><a class="tree-item-link" href="lab-05-stacks.html"><span class="tree-item-title">Lab 05 - Stacks</span></a></div><div class="tree-item-children"></div></div><div class="tree-item mod-tree-file" data-depth="1"><div class="tree-item-contents"><a class="tree-item-link" href="lab-06-binary-search-trees.html"><span class="tree-item-title">Lab 06 - Binary Search Trees</span></a></div><div class="tree-item-children"></div></div><div class="tree-item mod-tree-file" data-depth="1"><div class="tree-item-contents"><a class="tree-item-link" href="lab-07-c-functions-and-arrays.html"><span class="tree-item-title">Lab 07 - C Functions and Arrays</span></a></div><div class="tree-item-children"></div></div><div class="tree-item mod-tree-file" data-depth="1"><div class="tree-item-contents"><a class="tree-item-link" href="lab-08-pointers-and-memory.html"><span class="tree-item-title">Lab 08 - Pointers and Memory</span></a></div><div class="tree-item-children"></div></div><div class="tree-item mod-tree-file" data-depth="1"><div class="tree-item-contents"><a class="tree-item-link" href="midterm-study-guide.html"><span class="tree-item-title">Midterm Study Guide</span></a></div><div class="tree-item-children"></div></div><div class="tree-item mod-tree-file" data-depth="1"><div class="tree-item-contents"><a class="tree-item-link" href="pm-1-first-experience-manager.html"><span class="tree-item-title">PM 1 - First Experience Manager</span></a></div><div class="tree-item-children"></div></div><div class="tree-item mod-tree-file" data-depth="1"><div class="tree-item-contents"><a class="tree-item-link" href="readme.html"><span class="tree-item-title">README</span></a></div><div class="tree-item-children"></div></div></div></div></div></div><div class="document-container"><div class="markdown-preview-view markdown-rendered node-insert-event is-readable-line-width allow-fold-headings show-indentation-guide allow-fold-lists" tabindex="-1" style="tab-size: 4;"><style id="MJX-CHTML-styles">mjx-c.mjx-c30::before { padding: 0.666em 0.5em 0.022em 0px; content: "0"; }
+mjx-c.mjx-c2B::before { padding: 0.583em 0.778em 0.082em 0px; content: "+"; }
+mjx-c.mjx-c35::before { padding: 0.666em 0.5em 0.022em 0px; content: "5"; }
+mjx-c.mjx-c3D::before { padding: 0.583em 0.778em 0.082em 0px; content: "="; }
+mjx-container[jax="CHTML"] { line-height: 0; }
+mjx-container [space="1"] { margin-left: 0.111em; }
+mjx-container [space="2"] { margin-left: 0.167em; }
+mjx-container [space="3"] { margin-left: 0.222em; }
+mjx-container [space="4"] { margin-left: 0.278em; }
+mjx-container [space="5"] { margin-left: 0.333em; }
+mjx-container [rspace="1"] { margin-right: 0.111em; }
+mjx-container [rspace="2"] { margin-right: 0.167em; }
+mjx-container [rspace="3"] { margin-right: 0.222em; }
+mjx-container [rspace="4"] { margin-right: 0.278em; }
+mjx-container [rspace="5"] { margin-right: 0.333em; }
+mjx-container [size="s"] { font-size: 70.7%; }
+mjx-container [size="ss"] { font-size: 50%; }
+mjx-container [size="Tn"] { font-size: 60%; }
+mjx-container [size="sm"] { font-size: 85%; }
+mjx-container [size="lg"] { font-size: 120%; }
+mjx-container [size="Lg"] { font-size: 144%; }
+mjx-container [size="LG"] { font-size: 173%; }
+mjx-container [size="hg"] { font-size: 207%; }
+mjx-container [size="HG"] { font-size: 249%; }
+mjx-container [width="full"] { width: 100%; }
+mjx-box { display: inline-block; }
+mjx-block { display: block; }
+mjx-itable { display: inline-table; }
+mjx-row { display: table-row; }
+mjx-row > * { display: table-cell; }
+mjx-mtext { display: inline-block; }
+mjx-mstyle { display: inline-block; }
+mjx-merror { display: inline-block; color: red; background-color: yellow; }
+mjx-mphantom { visibility: hidden; }
+mjx-assistive-mml { top: 0px; left: 0px; clip: rect(1px, 1px, 1px, 1px); user-select: none; position: absolute !important; padding: 1px 0px 0px !important; border: 0px !important; display: block !important; width: auto !important; overflow: hidden !important; }
+mjx-assistive-mml[display="block"] { width: 100% !important; }
+mjx-math { display: inline-block; text-align: left; line-height: 0; text-indent: 0px; font-style: normal; font-weight: normal; font-size: 100%; letter-spacing: normal; border-collapse: collapse; overflow-wrap: normal; word-spacing: normal; white-space: nowrap; direction: ltr; padding: 1px 0px; }
+mjx-container[jax="CHTML"][display="true"] { display: block; text-align: center; margin: 1em 0px; }
+mjx-container[jax="CHTML"][display="true"][width="full"] { display: flex; }
+mjx-container[jax="CHTML"][display="true"] mjx-math { padding: 0px; }
+mjx-container[jax="CHTML"][justify="left"] { text-align: left; }
+mjx-container[jax="CHTML"][justify="right"] { text-align: right; }
+mjx-msup { display: inline-block; text-align: left; }
+mjx-mn { display: inline-block; text-align: left; }
+mjx-c { display: inline-block; }
+mjx-utext { display: inline-block; padding: 0.75em 0px 0.2em; }
+mjx-texatom { display: inline-block; text-align: left; }
+mjx-mi { display: inline-block; text-align: left; }
+mjx-mo { display: inline-block; text-align: left; }
+mjx-stretchy-h { display: inline-table; width: 100%; }
+mjx-stretchy-h > * { display: table-cell; width: 0px; }
+mjx-stretchy-h > * > mjx-c { display: inline-block; transform: scaleX(1); }
+mjx-stretchy-h > * > mjx-c::before { display: inline-block; width: initial; }
+mjx-stretchy-h > mjx-ext { overflow: clip visible; width: 100%; }
+mjx-stretchy-h > mjx-ext > mjx-c::before { transform: scaleX(500); }
+mjx-stretchy-h > mjx-ext > mjx-c { width: 0px; }
+mjx-stretchy-h > mjx-beg > mjx-c { margin-right: -0.1em; }
+mjx-stretchy-h > mjx-end > mjx-c { margin-left: -0.1em; }
+mjx-stretchy-v { display: inline-block; }
+mjx-stretchy-v > * { display: block; }
+mjx-stretchy-v > mjx-beg { height: 0px; }
+mjx-stretchy-v > mjx-end > mjx-c { display: block; }
+mjx-stretchy-v > * > mjx-c { transform: scaleY(1); transform-origin: left center; overflow: hidden; }
+mjx-stretchy-v > mjx-ext { display: block; height: 100%; box-sizing: border-box; border: 0px solid transparent; overflow: visible clip; }
+mjx-stretchy-v > mjx-ext > mjx-c::before { width: initial; box-sizing: border-box; }
+mjx-stretchy-v > mjx-ext > mjx-c { transform: scaleY(500) translateY(0.075em); overflow: visible; }
+mjx-mark { display: inline-block; height: 0px; }
+mjx-c::before { display: block; width: 0px; }
+.MJX-TEX { font-family: MJXZERO, MJXTEX; }
+.TEX-B { font-family: MJXZERO, MJXTEX-B; }
+.TEX-I { font-family: MJXZERO, MJXTEX-I; }
+.TEX-MI { font-family: MJXZERO, MJXTEX-MI; }
+.TEX-BI { font-family: MJXZERO, MJXTEX-BI; }
+.TEX-S1 { font-family: MJXZERO, MJXTEX-S1; }
+.TEX-S2 { font-family: MJXZERO, MJXTEX-S2; }
+.TEX-S3 { font-family: MJXZERO, MJXTEX-S3; }
+.TEX-S4 { font-family: MJXZERO, MJXTEX-S4; }
+.TEX-A { font-family: MJXZERO, MJXTEX-A; }
+.TEX-C { font-family: MJXZERO, MJXTEX-C; }
+.TEX-CB { font-family: MJXZERO, MJXTEX-CB; }
+.TEX-FR { font-family: MJXZERO, MJXTEX-FR; }
+.TEX-FRB { font-family: MJXZERO, MJXTEX-FRB; }
+.TEX-SS { font-family: MJXZERO, MJXTEX-SS; }
+.TEX-SSB { font-family: MJXZERO, MJXTEX-SSB; }
+.TEX-SSI { font-family: MJXZERO, MJXTEX-SSI; }
+.TEX-SC { font-family: MJXZERO, MJXTEX-SC; }
+.TEX-T { font-family: MJXZERO, MJXTEX-T; }
+.TEX-V { font-family: MJXZERO, MJXTEX-V; }
+.TEX-VB { font-family: MJXZERO, MJXTEX-VB; }
+mjx-stretchy-v mjx-c, mjx-stretchy-h mjx-c { font-family: MJXZERO, MJXTEX-S1, MJXTEX-S4, MJXTEX, MJXTEX-A !important; }
+@font-face { font-family: MJXZERO; src: url("app://obsidian.md/lib/mathjax/output/chtml/fonts/woff-v2/MathJax_Zero.woff") format("woff"); }
+@font-face { font-family: MJXTEX; src: url("app://obsidian.md/lib/mathjax/output/chtml/fonts/woff-v2/MathJax_Main-Regular.woff") format("woff"); }
+@font-face { font-family: MJXTEX-B; src: url("app://obsidian.md/lib/mathjax/output/chtml/fonts/woff-v2/MathJax_Main-Bold.woff") format("woff"); }
+@font-face { font-family: MJXTEX-I; src: url("app://obsidian.md/lib/mathjax/output/chtml/fonts/woff-v2/MathJax_Math-Italic.woff") format("woff"); }
+@font-face { font-family: MJXTEX-MI; src: url("app://obsidian.md/lib/mathjax/output/chtml/fonts/woff-v2/MathJax_Main-Italic.woff") format("woff"); }
+@font-face { font-family: MJXTEX-BI; src: url("app://obsidian.md/lib/mathjax/output/chtml/fonts/woff-v2/MathJax_Math-BoldItalic.woff") format("woff"); }
+@font-face { font-family: MJXTEX-S1; src: url("app://obsidian.md/lib/mathjax/output/chtml/fonts/woff-v2/MathJax_Size1-Regular.woff") format("woff"); }
+@font-face { font-family: MJXTEX-S2; src: url("app://obsidian.md/lib/mathjax/output/chtml/fonts/woff-v2/MathJax_Size2-Regular.woff") format("woff"); }
+@font-face { font-family: MJXTEX-S3; src: url("app://obsidian.md/lib/mathjax/output/chtml/fonts/woff-v2/MathJax_Size3-Regular.woff") format("woff"); }
+@font-face { font-family: MJXTEX-S4; src: url("app://obsidian.md/lib/mathjax/output/chtml/fonts/woff-v2/MathJax_Size4-Regular.woff") format("woff"); }
+@font-face { font-family: MJXTEX-A; src: url("app://obsidian.md/lib/mathjax/output/chtml/fonts/woff-v2/MathJax_AMS-Regular.woff") format("woff"); }
+@font-face { font-family: MJXTEX-C; src: url("app://obsidian.md/lib/mathjax/output/chtml/fonts/woff-v2/MathJax_Calligraphic-Regular.woff") format("woff"); }
+@font-face { font-family: MJXTEX-CB; src: url("app://obsidian.md/lib/mathjax/output/chtml/fonts/woff-v2/MathJax_Calligraphic-Bold.woff") format("woff"); }
+@font-face { font-family: MJXTEX-FR; src: url("app://obsidian.md/lib/mathjax/output/chtml/fonts/woff-v2/MathJax_Fraktur-Regular.woff") format("woff"); }
+@font-face { font-family: MJXTEX-FRB; src: url("app://obsidian.md/lib/mathjax/output/chtml/fonts/woff-v2/MathJax_Fraktur-Bold.woff") format("woff"); }
+@font-face { font-family: MJXTEX-SS; src: url("app://obsidian.md/lib/mathjax/output/chtml/fonts/woff-v2/MathJax_SansSerif-Regular.woff") format("woff"); }
+@font-face { font-family: MJXTEX-SSB; src: url("app://obsidian.md/lib/mathjax/output/chtml/fonts/woff-v2/MathJax_SansSerif-Bold.woff") format("woff"); }
+@font-face { font-family: MJXTEX-SSI; src: url("app://obsidian.md/lib/mathjax/output/chtml/fonts/woff-v2/MathJax_SansSerif-Italic.woff") format("woff"); }
+@font-face { font-family: MJXTEX-SC; src: url("app://obsidian.md/lib/mathjax/output/chtml/fonts/woff-v2/MathJax_Script-Regular.woff") format("woff"); }
+@font-face { font-family: MJXTEX-T; src: url("app://obsidian.md/lib/mathjax/output/chtml/fonts/woff-v2/MathJax_Typewriter-Regular.woff") format("woff"); }
+@font-face { font-family: MJXTEX-V; src: url("app://obsidian.md/lib/mathjax/output/chtml/fonts/woff-v2/MathJax_Vector-Regular.woff") format("woff"); }
+@font-face { font-family: MJXTEX-VB; src: url("app://obsidian.md/lib/mathjax/output/chtml/fonts/woff-v2/MathJax_Vector-Bold.woff") format("woff"); }
+mjx-c.mjx-c32::before { padding: 0.666em 0.5em 0px 0px; content: "2"; }
+mjx-c.mjx-c36::before { padding: 0.666em 0.5em 0.022em 0px; content: "6"; }
+mjx-c.mjx-c34::before { padding: 0.677em 0.5em 0px 0px; content: "4"; }
+mjx-c.mjx-c28::before { padding: 0.75em 0.389em 0.25em 0px; content: "("; }
+mjx-c.mjx-c31::before { padding: 0.666em 0.5em 0px 0px; content: "1"; }
+mjx-c.mjx-c29::before { padding: 0.75em 0.389em 0.25em 0px; content: ")"; }
+mjx-c.mjx-c33::before { padding: 0.665em 0.5em 0.022em 0px; content: "3"; }
+</style><div class="markdown-preview-sizer markdown-preview-section" style="padding-bottom: ; padding-top: var(--file-margins); padding-right: var(--file-margins); padding-left: var(--file-margins); width: 100%; position: absolute;"><div class="markdown-preview-pusher" style="width: 1px; height: 0.1px; margin-bottom: 0px;"></div><div class="mod-header"><div class="inline-title" data-heading="Lab 08 - Pointers and Memory" id="Lab_08_-_Pointers_and_Memory" style="display: block;">Lab 08 - Pointers and Memory</div></div><div><ul class="has-list-bullet">
+<li data-line="0"><div class="list-bullet"></div><a data-href="#Struct" href="#Struct" class="internal-link" target="_self" rel="noopener">Struct</a></li>
+<li data-line="1"><div class="list-bullet"></div><a data-href="#Pointer" href="#Pointer" class="internal-link" target="_self" rel="noopener">Pointer</a></li>
+<li data-line="2"><div class="list-bullet"></div><a data-href="#Dynamic Memory Allocation" href="#Dynamic_Memory_Allocation" class="internal-link" target="_self" rel="noopener">Dynamic Memory Allocation</a></li>
+<li data-line="3"><div class="list-bullet"></div><a data-href="#Lab assignment hints" href="#Lab_assignment_hints" class="internal-link" target="_self" rel="noopener">Lab assignment hints</a></li>
+</ul></div><div><h2 data-heading="Struct" id="Struct" style="display: flex;"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>Struct</h2></div><div><ul class="has-list-bullet">
+<li data-line="0"><div class="list-bullet"></div>3 ways to define and instantiate a <strong><em>struct</em></strong></li>
+</ul></div><div><pre class="language-c" tabindex="0"><code class="language-c is-loaded"><span class="token comment">// 1. typtedef</span>
+<span class="token keyword">typedef</span> <span class="token keyword">struct</span> <span class="token class-name">StructTypeName_struct</span> <span class="token punctuation">{</span>
+   type item1<span class="token punctuation">;</span>
+   type item2<span class="token punctuation">;</span>
+   <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+   type itemN<span class="token punctuation">;</span>      
+<span class="token punctuation">}</span> StructTypeName<span class="token punctuation">;</span>
+
+StructTypeName myVar<span class="token punctuation">;</span> <span class="token comment">// define a variable</span>
+
+<span class="token comment">// 2.</span>
+<span class="token keyword">struct</span> <span class="token class-name">StructTypeName</span> <span class="token punctuation">{</span>
+   type item1<span class="token punctuation">;</span>
+   type item2<span class="token punctuation">;</span>
+   <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+   type itemN<span class="token punctuation">;</span>      
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token comment">// in this case, keyword 'struct' is required when defining a variable</span>
+<span class="token keyword">struct</span> <span class="token class-name">StructTypeName</span> myVar<span class="token punctuation">;</span>
+
+<span class="token comment">// 3. anonymous struct</span>
+<span class="token keyword">struct</span> <span class="token punctuation">{</span>
+   type item1<span class="token punctuation">;</span>
+   type item2<span class="token punctuation">;</span>
+   <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+   type itemN<span class="token punctuation">;</span>      
+<span class="token punctuation">}</span> myVar<span class="token punctuation">;</span>
+</code><button class="copy-code-button">Copy</button></pre></div><div><ul class="has-list-bullet">
+<li data-line="0"><div class="list-bullet"></div>use <code>.</code> operator to access member variables (e.g., <code>myVar.item1</code>)</li>
+</ul></div><div><pre class="language-c" tabindex="0"><code class="language-c is-loaded"><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span><span class="token string">&lt;stdio.h&gt;</span></span>
+
+<span class="token keyword">struct</span> <span class="token class-name">A</span> <span class="token punctuation">{</span> <span class="token comment">// (2)</span>
+    <span class="token keyword">int</span> x<span class="token punctuation">;</span>
+    <span class="token keyword">float</span> y<span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+<span class="token keyword">struct</span> <span class="token punctuation">{</span> <span class="token comment">// (3)</span>
+    <span class="token keyword">char</span> z<span class="token punctuation">;</span>
+<span class="token punctuation">}</span> b1<span class="token punctuation">,</span> b2<span class="token punctuation">;</span>
+
+<span class="token keyword">struct</span> <span class="token class-name">A</span> <span class="token function">foo</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token comment">// a function which returns a struct A</span>
+    <span class="token keyword">struct</span> <span class="token class-name">A</span> a<span class="token punctuation">;</span>
+    a<span class="token punctuation">.</span>x <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>
+    a<span class="token punctuation">.</span>y <span class="token operator">=</span> <span class="token number">2.0</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span> a<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">struct</span> <span class="token class-name">A</span> a <span class="token operator">=</span> <span class="token function">foo</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"%d, %.1f\n"</span><span class="token punctuation">,</span> a<span class="token punctuation">.</span>x<span class="token punctuation">,</span> a<span class="token punctuation">.</span>y<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    
+    b1<span class="token punctuation">.</span>z <span class="token operator">=</span> <span class="token char">'a'</span><span class="token punctuation">;</span>
+    b2<span class="token punctuation">.</span>z <span class="token operator">=</span> <span class="token char">'b'</span><span class="token punctuation">;</span>
+    <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"%c%c\n"</span><span class="token punctuation">,</span> b1<span class="token punctuation">.</span>z<span class="token punctuation">,</span> b2<span class="token punctuation">.</span>z<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    
+    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code><button class="copy-code-button">Copy</button></pre></div><div><pre><code>1, 2.0
+ab
+</code><button class="copy-code-button">Copy</button></pre></div><div><h2 data-heading="Pointer" id="Pointer" style="display: flex;"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>Pointer</h2></div><div><p><strong>Pointer</strong>: A variable that holds a memory address.</p></div><div><ul class="has-list-bullet">
+<li data-line="0"><div class="list-bullet"></div>A 64-bit system can have a memory size of up to <span class="math math-inline is-loaded"><mjx-container class="MathJax" jax="CHTML"><mjx-math class="MJX-TEX"><mjx-msup><mjx-mn class="mjx-n"><mjx-c class="mjx-c32"></mjx-c></mjx-mn><mjx-script style="vertical-align: 0.363em;"><mjx-texatom size="s" texclass="ORD"><mjx-mn class="mjx-n"><mjx-c class="mjx-c36"></mjx-c><mjx-c class="mjx-c34"></mjx-c></mjx-mn></mjx-texatom></mjx-script></mjx-msup></mjx-math></mjx-container></span> bytes theoretically, with each address represented by a 64-bit integer.</li>
+<li data-line="1"><div class="list-bullet"></div>Precede a variable with <strong>reference operator</strong> <code>&amp;</code> to get the memory address of it. <span class="math math-inline is-loaded"><mjx-container class="MathJax" jax="CHTML"><mjx-math class="MJX-TEX"><mjx-msup><mjx-mi class="mjx-n"></mjx-mi><mjx-script style="vertical-align: 0.363em;"><mjx-texatom size="s" texclass="ORD"><mjx-mo class="mjx-n"><mjx-c class="mjx-c28"></mjx-c></mjx-mo><mjx-mn class="mjx-n"><mjx-c class="mjx-c31"></mjx-c></mjx-mn><mjx-mo class="mjx-n"><mjx-c class="mjx-c29"></mjx-c></mjx-mo></mjx-texatom></mjx-script></mjx-msup></mjx-math></mjx-container></span></li>
+<li data-line="2"><div class="list-bullet"></div>Append <code>*</code> after a type to denote a pointer type. <span class="math math-inline is-loaded"><mjx-container class="MathJax" jax="CHTML"><mjx-math class="MJX-TEX"><mjx-msup><mjx-mi class="mjx-n"></mjx-mi><mjx-script style="vertical-align: 0.363em;"><mjx-texatom size="s" texclass="ORD"><mjx-mo class="mjx-n"><mjx-c class="mjx-c28"></mjx-c></mjx-mo><mjx-mn class="mjx-n"><mjx-c class="mjx-c32"></mjx-c></mjx-mn><mjx-mo class="mjx-n"><mjx-c class="mjx-c29"></mjx-c></mjx-mo></mjx-texatom></mjx-script></mjx-msup></mjx-math></mjx-container></span></li>
+<li data-line="3"><div class="list-bullet"></div>Prefix a pointer with <strong>dereference operator</strong> <code>*</code> to retrieve the value stored in the memory address pointed to by the pointer. <span class="math math-inline is-loaded"><mjx-container class="MathJax" jax="CHTML"><mjx-math class="MJX-TEX"><mjx-msup><mjx-mi class="mjx-n"></mjx-mi><mjx-script style="vertical-align: 0.363em;"><mjx-texatom size="s" texclass="ORD"><mjx-mo class="mjx-n"><mjx-c class="mjx-c28"></mjx-c></mjx-mo><mjx-mn class="mjx-n"><mjx-c class="mjx-c33"></mjx-c></mjx-mn><mjx-mo class="mjx-n"><mjx-c class="mjx-c29"></mjx-c></mjx-mo></mjx-texatom></mjx-script></mjx-msup></mjx-math></mjx-container></span></li>
+</ul></div><div><pre class="language-c" tabindex="0"><code class="language-c is-loaded"><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;stdio.h&gt;</span></span>
+
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">int</span> var <span class="token operator">=</span> <span class="token number">0x12345678</span><span class="token punctuation">;</span>
+    
+    <span class="token comment">// "unsigned long" is a 64-bit integer type</span>
+    <span class="token keyword">unsigned</span> <span class="token keyword">long</span> addr <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token keyword">unsigned</span> <span class="token keyword">long</span><span class="token punctuation">)</span> <span class="token operator">&amp;</span>var<span class="token punctuation">;</span> <span class="token comment">// (1)</span>
+    
+    <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"Variable 'var' of type int:\n"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"The beginning address of 'var' in hex: 0x%016lx\n"</span><span class="token punctuation">,</span> addr<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"'var' occupies %d bytes (%d bits) of memory.\n"</span><span class="token punctuation">,</span> <span class="token keyword">sizeof</span> var<span class="token punctuation">,</span> <span class="token number">8</span> <span class="token operator">*</span> <span class="token keyword">sizeof</span><span class="token punctuation">(</span>var<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    
+    <span class="token comment">// init a pointer from an address value</span>
+    <span class="token keyword">int</span><span class="token operator">*</span> ptr <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token keyword">int</span><span class="token operator">*</span><span class="token punctuation">)</span> addr<span class="token punctuation">;</span> <span class="token comment">// (2)</span>
+    
+    <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"\nPointer variable 'ptr' pointing to 'var':\n"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"'ptr' occupies %d bytes (%d bits) of memory.\n"</span><span class="token punctuation">,</span> <span class="token keyword">sizeof</span> ptr<span class="token punctuation">,</span> <span class="token number">8</span> <span class="token operator">*</span> <span class="token keyword">sizeof</span><span class="token punctuation">(</span>ptr<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"The value of the variable pointed to by 'ptr': %#x\n"</span><span class="token punctuation">,</span> <span class="token operator">*</span>ptr<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// (3)</span>
+    
+    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code><button class="copy-code-button">Copy</button></pre></div><div><pre><code>Variable 'var' of type int:
+The beginning address of 'var' in hex: 0x000000030567a0f8
+'var' occupies 4 bytes (32 bits) of memory.
+
+Pointer variable 'ptr' pointing to 'var':
+'ptr' occupies 8 bytes (64 bits) of memory.
+The value of the variable pointed to by 'ptr': 0x12345678
+</code><button class="copy-code-button">Copy</button></pre></div><div><ul class="has-list-bullet">
+<li data-line="0"><div class="list-bullet"></div>pass <strong>by reference</strong>: pass the address</li>
+<li data-line="1"><div class="list-bullet"></div>pass <strong>by value</strong>: pass a copy of the variable</li>
+</ul></div><div><pre class="language-c" tabindex="0"><code class="language-c is-loaded"><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;stdio.h&gt;</span></span>
+
+<span class="token keyword">void</span> <span class="token function">pass_by_value</span><span class="token punctuation">(</span><span class="token keyword">int</span> x<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    x <span class="token operator">=</span> <span class="token number">4</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">void</span> <span class="token function">pass_by_reference</span><span class="token punctuation">(</span><span class="token keyword">int</span><span class="token operator">*</span> p_x<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token operator">*</span>p_x <span class="token operator">=</span> <span class="token number">4</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">int</span> x <span class="token operator">=</span> <span class="token number">2</span><span class="token punctuation">;</span>
+    
+    <span class="token function">pass_by_value</span><span class="token punctuation">(</span>x<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"%d\n"</span><span class="token punctuation">,</span> x<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    
+    <span class="token function">pass_by_reference</span><span class="token punctuation">(</span><span class="token operator">&amp;</span>x<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"%d\n"</span><span class="token punctuation">,</span> x<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    
+    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code><button class="copy-code-button">Copy</button></pre></div><div><pre><code>2
+4
+</code><button class="copy-code-button">Copy</button></pre></div><div><h2 data-heading="Dynamic Memory Allocation" id="Dynamic_Memory_Allocation" style="display: flex;"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>Dynamic Memory Allocation</h2></div><div><ul class="has-list-bullet">
+<li data-line="0"><div class="list-bullet"></div><em>void</em>* <a data-tooltip-position="top" aria-label="https://cplusplus.com/reference/cstdlib/malloc/" rel="noopener" class="external-link" href="https://cplusplus.com/reference/cstdlib/malloc/" target="_blank"><strong><em>malloc</em></strong></a> (<em>size_t</em> size): <strong>Allocate</strong>s a block of <em>size</em> bytes of memory, returning a pointer to the beginning of the block.</li>
+<li data-line="1"><div class="list-bullet"></div><em>void</em> <a data-tooltip-position="top" aria-label="https://cplusplus.com/reference/cstdlib/free/" rel="noopener" class="external-link" href="https://cplusplus.com/reference/cstdlib/free/" target="_blank"><strong><em>free</em></strong></a> (<em>void</em>* ptr): <strong>Release</strong>s a block of memory pointed to by <em>ptr</em>.</li>
+</ul></div><div><pre class="language-c" tabindex="0"><code class="language-c is-loaded"><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;stdlib.h&gt;</span> <span class="token comment">// standard library</span></span>
+
+<span class="token keyword">typedef</span> <span class="token keyword">struct</span> <span class="token class-name">A_struct</span> <span class="token punctuation">{</span>
+    <span class="token keyword">int</span> val<span class="token punctuation">;</span>
+    <span class="token keyword">struct</span> <span class="token class-name">A_struct</span> <span class="token operator">*</span>ptr<span class="token punctuation">;</span>
+<span class="token punctuation">}</span> A<span class="token punctuation">;</span>
+
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    A<span class="token operator">*</span> p_a <span class="token operator">=</span> <span class="token punctuation">(</span>A<span class="token operator">*</span><span class="token punctuation">)</span> <span class="token function">malloc</span><span class="token punctuation">(</span><span class="token keyword">sizeof</span><span class="token punctuation">(</span>A<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    
+    <span class="token comment">// dynamically allocate memory for an array of type int of length 5</span>
+    <span class="token keyword">int</span><span class="token operator">*</span> iarr <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token keyword">int</span><span class="token operator">*</span><span class="token punctuation">)</span> <span class="token function">malloc</span><span class="token punctuation">(</span><span class="token keyword">sizeof</span><span class="token punctuation">(</span><span class="token keyword">int</span><span class="token punctuation">)</span> <span class="token operator">*</span> <span class="token number">5</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    
+    <span class="token comment">// dynamically allocate memory for an array of struct A of length 5</span>
+    A<span class="token operator">*</span> arr <span class="token operator">=</span> <span class="token punctuation">(</span>A<span class="token operator">*</span><span class="token punctuation">)</span> <span class="token function">malloc</span><span class="token punctuation">(</span><span class="token keyword">sizeof</span><span class="token punctuation">(</span>A<span class="token punctuation">)</span> <span class="token operator">*</span> <span class="token number">5</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    
+    <span class="token comment">// free the memory</span>
+    <span class="token function">free</span><span class="token punctuation">(</span>p_a<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token function">free</span><span class="token punctuation">(</span>iarr<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token function">free</span><span class="token punctuation">(</span>arr<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code><button class="copy-code-button">Copy</button></pre></div><div><h2 data-heading="Lab assignment hints" id="Lab_assignment_hints" style="display: flex;"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>Lab assignment hints</h2></div><div><h3 data-heading="42.14 LAB: Number sequences - memory allocation" id="42.14_LAB:_Number_sequences_-_memory_allocation" style="display: flex;"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>42.14 LAB: Number sequences - memory allocation</h3></div><div><p><strong>Concatenate</strong></p></div><div><ul class="has-list-bullet">
+<li data-line="0"><div class="list-bullet"></div>Implementing without loops: use function <a data-tooltip-position="top" aria-label="https://cplusplus.com/reference/cstring/memcpy/" rel="noopener" class="external-link" href="https://cplusplus.com/reference/cstring/memcpy/" target="_blank">memcpy</a> from <code>&lt;string.h&gt;</code></li>
+</ul></div><div class="mod-footer"></div></div></div></div><div class="sidebar-right sidebar"><div class="sidebar-content"><span class="sidebar-section-header">Interactive Graph</span><div class="graph-view-placeholder">
+		<div class="graph-view-container">
+			<div class="graph-icon graph-expand" role="button" aria-label="Expand" data-tooltip-position="top"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-arrow-up-right"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg></div>
+			<canvas id="graph-canvas" width="512px" height="512px"></canvas>
+		</div>
+		</div><div class="tree-container outline-tree" data-depth="0"><div class="tree-header"><span class="sidebar-section-header">Table Of Contents</span><button class="clickable-icon collapse-tree-button"><iconify-icon icon="ph:arrows-in-line-horizontal-bold" width="18px" height="18px" rotate="90deg" color="currentColor"></iconify-icon></button></div><div class="tree-scroll-area"><div class="tree-item mod-tree-heading" data-depth="1"><div class="tree-item-contents"><a class="tree-item-link" href="#Lab_08_-_Pointers_and_Memory"><span class="tree-item-title">Lab 08 - Pointers and Memory</span></a></div><div class="tree-item-children"><div class="tree-item mod-tree-heading" data-depth="2"><div class="tree-item-contents"><a class="tree-item-link" href="#Struct"><span class="tree-item-title">Struct</span></a></div><div class="tree-item-children"></div></div><div class="tree-item mod-tree-heading" data-depth="2"><div class="tree-item-contents"><a class="tree-item-link" href="#Pointer"><span class="tree-item-title">Pointer</span></a></div><div class="tree-item-children"></div></div><div class="tree-item mod-tree-heading" data-depth="2"><div class="tree-item-contents"><a class="tree-item-link" href="#Dynamic_Memory_Allocation"><span class="tree-item-title">Dynamic Memory Allocation</span></a></div><div class="tree-item-children"></div></div><div class="tree-item mod-tree-heading mod-collapsible" data-depth="2"><div class="tree-item-contents"><div class="tree-item-icon collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div><a class="tree-item-link" href="#Lab_assignment_hints"><span class="tree-item-title">Lab assignment hints</span></a></div><div class="tree-item-children"><div class="tree-item mod-tree-heading" data-depth="3"><div class="tree-item-contents"><a class="tree-item-link" href="#42.14_LAB:_Number_sequences_-_memory_allocation"><span class="tree-item-title">42.14 LAB: Number sequences - memory allocation</span></a></div><div class="tree-item-children"></div></div></div></div></div></div></div></div></div></div></div></body></html>
