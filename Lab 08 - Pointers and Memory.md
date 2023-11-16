@@ -175,6 +175,8 @@ int main() {
 ```
 
 ## Lab assignment hints
+[Lab 08: Pointers (instructure.com)](https://tulane.instructure.com/courses/2271434/assignments/14343178)
+
 ### 42.14 LAB: Number sequences - memory allocation
 **Concatenate**
 - Implementing without loops: use function [memcpy](https://cplusplus.com/reference/cstring/memcpy/) from `<string.h>`
