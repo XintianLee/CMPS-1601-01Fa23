@@ -13,4 +13,4 @@
 - [Lab - Test-Driven Development](https://xintianlee.github.io/CMPS-1601-01Fa23/lab-test-driven-development.html)
 - [Lab 07 - C Functions and Arrays](https://xintianlee.github.io/CMPS-1601-01Fa23/lab-07-c-functions-and-arrays.html)
 - [Lab 08 - Pointers and Memory](https://xintianlee.github.io/CMPS-1601-01Fa23/lab-08-pointers-and-memory.html)
-- [Lab 09 - C++ Classes and Objects](https://xintianlee.github.io/CMPS-1601-01Fa23/)
+- [Lab 09 - C++ Classes and Objects](https://xintianlee.github.io/CMPS-1601-01Fa23/lab-09-c++-classes-and-objects.html)
