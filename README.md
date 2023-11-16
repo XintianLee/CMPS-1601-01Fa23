@@ -13,3 +13,5 @@
 - [[Lab - Test-Driven Development]]
 - [[Lab 07 - C Functions and Arrays]]
 - [[Lab 08 - Pointers and Memory]]
+- [Lab - Data Structures Quiz Study Guide](https://tulane.instructure.com/courses/2271434/assignments/14418227)
+- [[Lab 09 - C++ Classes and Objects]]
